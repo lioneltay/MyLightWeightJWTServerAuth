@@ -1,25 +1,16 @@
 const express = require('express')
-
 const bodyParser = require('body-parser')
-const morgan = require('morgan')
-
 const mongoose = require('mongoose')
 
-//@@@@@@@@@@@ might not need
-
-
-
+// Routes
 const router = require('./router')
-
-
-
-const app = express()
 
 // DB Setup
 mongoose.connect('mongodb://localhost:auth/auth')
 
 
 // App Setup
+const app = express()
 app.use(bodyParser.json({ type: '*/*' }))
 router(app)
 

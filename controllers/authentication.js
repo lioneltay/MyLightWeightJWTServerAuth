@@ -4,6 +4,8 @@ const secret = require('../config').secret
 
 const sha512 = require('../utils/encryption').sha512
 
+
+// May refactor to use promises later. Learn mongoose and mongodb!
 exports.signup = function(req, res, next) {
 	const email = req.body.email
 	const password = req.body.password

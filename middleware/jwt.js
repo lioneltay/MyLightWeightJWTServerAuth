@@ -12,6 +12,7 @@ exports.jwtLogin = function(req, res, next) {
 			return
 		}
 		
+		// able to modify the request before handing over to next middleware, cool.
 		req.user = payload.sub
 		return next()
 	})

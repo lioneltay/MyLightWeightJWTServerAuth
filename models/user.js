@@ -7,7 +7,7 @@ const saltHashPassword = require('../utils/encryption').saltHashPassword
 
 const Schema = mongoose.Schema
 
-
+// Must define salt or else it can't be added
 const userSchema = new Schema({
 	email: {type: String, unique: true, lowercase: true },
 	password: String,
@@ -31,9 +31,6 @@ userSchema.pre('save', function(next) {
 	next()
 	
 })
-
-
-
 
 
 
